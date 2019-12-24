@@ -30,3 +30,7 @@
 #### Deployment
 
 - Deploy `serverless deploy --stage dev`
+
+#### Learn
+
+* [AWS Basic Setup on Local](https://serverless.betalectic.com/aws-basics-setup/)
