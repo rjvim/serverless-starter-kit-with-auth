@@ -1,0 +1,423 @@
+{
+	"info": {
+		"_postman_id": "b4b86d31-90d7-45c4-8a0e-1c7a97ad1213",
+		"name": "API Token Auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"rajivs.iitkgpgmail.com\",\n\t\"password\": \"Kissmiss9!\",\n\t\"confirm_password\": \"Kissmiss9!\",\n\t\"name\": \"Rajiv Seelam\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://857lq5ommb.execute-api.ap-south-1.amazonaws.com/dev/register",
+					"protocol": "https",
+					"host": [
+						"857lq5ommb",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Confirm User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"rajiv@betalectic.com\",\n\t\"code\": \"143750\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://857lq5ommb.execute-api.ap-south-1.amazonaws.com/dev/register",
+					"protocol": "https",
+					"host": [
+						"857lq5ommb",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resend Confirmation Code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"rajivs.iitkgp@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://857lq5ommb.execute-api.ap-south-1.amazonaws.com/dev/resend",
+					"protocol": "https",
+					"host": [
+						"857lq5ommb",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"resend"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"rajiv@betalectic.com\",\n\t\"password\": \"Kissmiss9!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://857lq5ommb.execute-api.ap-south-1.amazonaws.com/dev/login",
+					"protocol": "https",
+					"host": [
+						"857lq5ommb",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "AccessToken",
+						"name": "Content-Type",
+						"value": "eyJraWQiOiJIbUx4UGFpVUFiSHBBcFc4RTBNWjhFais2eW55RFUyQTF0R0tFOEdOb200PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlMzExNmJjMC0zMjRiLTRhODAtOGZjNS04ZmJmMjZmMzUwY2UiLCJldmVudF9pZCI6IjFkYTU1MzIxLWM5NDQtNGQ2Yi1hZGU5LTEyZTZhYzE1NDc2ZiIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE1NzcwOTYwODUsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoLTFfN2FQOXlHVzJPIiwiZXhwIjoxNTc3MDk5Njg1LCJpYXQiOjE1NzcwOTYwODUsImp0aSI6IjlmMGNjMTUwLTVkODAtNGNiMS1iYWE3LTIwYTVlNTU3ZDIwNyIsImNsaWVudF9pZCI6InZ1M2RhZzc0MGI0b3NsYW45aHQyNzdsMmQiLCJ1c2VybmFtZSI6InJhaml2QGJldGFsZWN0aWMuY29tIn0.GMWJosPy_a5v8FLCwKSRo-QWP-8GWA5UeXCOusziaICq3oZpVUYiTWFSdRc0xkcIx2yUOg8hJJYFuDjahdYxiAo9iMw86fZbd072uXJc2O6oAUq8-Y8kUctKc9kJxOGa4zPlIDrVsVzF5zmRzo4S8y0SI-csnZp5CLsJDLYob8fzxhbRa8c6stgiFilEDYqH_1qgGicWFEZ3Df52clSuiSFPUFhH19r2y3WgB4Jg4cR3qhbiAmdWTFXAXv4kZ9ISZPqSfy-PpoV0-6I5eTIhSQ8cqAo30LaYBsgQrzBq70VztjEZNv5E5AtQdeyrogd8aZr-GZVOamhEDJ-awHmMCQ",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJraWQiOiJOQUI5UFl5VFFuK3BUc0JOOUZCOUFQTkUzcm93K0tHbFwvXC8xaFwvRGNGQ2JZPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlMzExNmJjMC0zMjRiLTRhODAtOGZjNS04ZmJmMjZmMzUwY2UiLCJhdWQiOiJ2dTNkYWc3NDBiNG9zbGFuOWh0Mjc3bDJkIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImV2ZW50X2lkIjoiMWRhNTUzMjEtYzk0NC00ZDZiLWFkZTktMTJlNmFjMTU0NzZmIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE1NzcwOTYwODUsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoLTFfN2FQOXlHVzJPIiwibmFtZSI6IlJhaml2IFNlZWxhbSIsImNvZ25pdG86dXNlcm5hbWUiOiJyYWppdkBiZXRhbGVjdGljLmNvbSIsImV4cCI6MTU3NzA5OTY4NSwiaWF0IjoxNTc3MDk2MDg1LCJlbWFpbCI6InJhaml2QGJldGFsZWN0aWMuY29tIn0.ICUxb7oc8pzPNLiN9p-HNTGUGsnxjYx-p6Y5l-pKbZopJplQy53ttFKS0IMteiwZ98UibrkhtQsmHq2X6Pf_j2aVmX0x0_gTpVeIX3CTfOgB750zI0uEajTP_pUZ2Kvgxbp5sJvELKIOEjNgO6YBUyVoySdk49vGUvyQYjLROEag53rfW5yfc0HLa0Hc61xW-iLcL5rkGo8zW1MdymKxlcTncNKjY2zwaATYcWF-sc_0GuEmEouEIvHWAkt6LnaYo46_H73KGKjk8Q9AFDsAilAQDr3EmkYBissMKX1Fvdxz7HqF1hbYy2VuPEM8aMkAlTfXoDUGFyKd-9EiNyOUkA",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "eyJraWQiOiJIbUx4UGFpVUFiSHBBcFc4RTBNWjhFais2eW55RFUyQTF0R0tFOEdOb200PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlMzExNmJjMC0zMjRiLTRhODAtOGZjNS04ZmJmMjZmMzUwY2UiLCJldmVudF9pZCI6IjFkYTU1MzIxLWM5NDQtNGQ2Yi1hZGU5LTEyZTZhYzE1NDc2ZiIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE1NzcwOTYwODUsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoLTFfN2FQOXlHVzJPIiwiZXhwIjoxNTc3MDk5Njg1LCJpYXQiOjE1NzcwOTYwODUsImp0aSI6IjlmMGNjMTUwLTVkODAtNGNiMS1iYWE3LTIwYTVlNTU3ZDIwNyIsImNsaWVudF9pZCI6InZ1M2RhZzc0MGI0b3NsYW45aHQyNzdsMmQiLCJ1c2VybmFtZSI6InJhaml2QGJldGFsZWN0aWMuY29tIn0.GMWJosPy_a5v8FLCwKSRo-QWP-8GWA5UeXCOusziaICq3oZpVUYiTWFSdRc0xkcIx2yUOg8hJJYFuDjahdYxiAo9iMw86fZbd072uXJc2O6oAUq8-Y8kUctKc9kJxOGa4zPlIDrVsVzF5zmRzo4S8y0SI-csnZp5CLsJDLYob8fzxhbRa8c6stgiFilEDYqH_1qgGicWFEZ3Df52clSuiSFPUFhH19r2y3WgB4Jg4cR3qhbiAmdWTFXAXv4kZ9ISZPqSfy-PpoV0-6I5eTIhSQ8cqAo30LaYBsgQrzBq70VztjEZNv5E5AtQdeyrogd8aZr-GZVOamhEDJ-awHmMCQ"
+					}
+				],
+				"url": {
+					"raw": "https://857lq5ommb.execute-api.ap-south-1.amazonaws.com/dev/me",
+					"protocol": "https",
+					"host": [
+						"857lq5ommb",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Notes",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "AccessToken",
+						"value": "eyJraWQiOiJIbUx4UGFpVUFiSHBBcFc4RTBNWjhFais2eW55RFUyQTF0R0tFOEdOb200PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlMzExNmJjMC0zMjRiLTRhODAtOGZjNS04ZmJmMjZmMzUwY2UiLCJldmVudF9pZCI6ImFiYmUxMzJiLTM3MmQtNDM1MS05OThjLTkzZTc2NDViNTVmNyIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE1NzcwOTUyNDIsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoLTFfN2FQOXlHVzJPIiwiZXhwIjoxNTc3MDk4ODQyLCJpYXQiOjE1NzcwOTUyNDIsImp0aSI6IjdmZjcyOGQyLTQ2MDAtNDdkNi1iZjc3LTE1M2VkYTRlMzAzNyIsImNsaWVudF9pZCI6InZ1M2RhZzc0MGI0b3NsYW45aHQyNzdsMmQiLCJ1c2VybmFtZSI6InJhaml2QGJldGFsZWN0aWMuY29tIn0.NJGI8V1v8-g_684XiNJ2N4_F1zYZcHQdC6NSXm36c1zjJk1NlTlA3j9T4fnUWo9CZJAkL8BJIksAgIF8e2xeHzBgmHzCMiVCLj8QN9pAIZ-jvQj4QKyh4TT_6pKX0zrZZYI1Zfl5UI9Cm9c1cBACaUpDlBo-bIPpv6jmEnlRt7nJeguRShW4v5N6G2n4gXhu9ioG8WWHc1231ekxpd6wTNJ1uhLKqGGIdOyiC87uiXKoN0qDN0W8h6m4rvOnZmMAun8Kmqi9XxSAPrkFJK0iFg4F2FP50KNxBC1gxS41rzU6mb1DlF0qrSRx0hYBfbDgPKGPtmFKf283CBd1ouBY6w",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJraWQiOiJOQUI5UFl5VFFuK3BUc0JOOUZCOUFQTkUzcm93K0tHbFwvXC8xaFwvRGNGQ2JZPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlMzExNmJjMC0zMjRiLTRhODAtOGZjNS04ZmJmMjZmMzUwY2UiLCJhdWQiOiJ2dTNkYWc3NDBiNG9zbGFuOWh0Mjc3bDJkIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImV2ZW50X2lkIjoiMWRhNTUzMjEtYzk0NC00ZDZiLWFkZTktMTJlNmFjMTU0NzZmIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE1NzcwOTYwODUsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoLTFfN2FQOXlHVzJPIiwibmFtZSI6IlJhaml2IFNlZWxhbSIsImNvZ25pdG86dXNlcm5hbWUiOiJyYWppdkBiZXRhbGVjdGljLmNvbSIsImV4cCI6MTU3NzA5OTY4NSwiaWF0IjoxNTc3MDk2MDg1LCJlbWFpbCI6InJhaml2QGJldGFsZWN0aWMuY29tIn0.ICUxb7oc8pzPNLiN9p-HNTGUGsnxjYx-p6Y5l-pKbZopJplQy53ttFKS0IMteiwZ98UibrkhtQsmHq2X6Pf_j2aVmX0x0_gTpVeIX3CTfOgB750zI0uEajTP_pUZ2Kvgxbp5sJvELKIOEjNgO6YBUyVoySdk49vGUvyQYjLROEag53rfW5yfc0HLa0Hc61xW-iLcL5rkGo8zW1MdymKxlcTncNKjY2zwaATYcWF-sc_0GuEmEouEIvHWAkt6LnaYo46_H73KGKjk8Q9AFDsAilAQDr3EmkYBissMKX1Fvdxz7HqF1hbYy2VuPEM8aMkAlTfXoDUGFyKd-9EiNyOUkA",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://857lq5ommb.execute-api.ap-south-1.amazonaws.com/dev/notes",
+					"protocol": "https",
+					"host": [
+						"857lq5ommb",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"notes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJraWQiOiJOQUI5UFl5VFFuK3BUc0JOOUZCOUFQTkUzcm93K0tHbFwvXC8xaFwvRGNGQ2JZPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlMzExNmJjMC0zMjRiLTRhODAtOGZjNS04ZmJmMjZmMzUwY2UiLCJhdWQiOiJ2dTNkYWc3NDBiNG9zbGFuOWh0Mjc3bDJkIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImV2ZW50X2lkIjoiY2FhNGVkOGYtNTU0Yy00YWZjLWE2N2QtYTcwMDkxNTlhNjk5IiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE1NzcwOTg0NDgsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoLTFfN2FQOXlHVzJPIiwibmFtZSI6IlJhaml2IFNlZWxhbSIsImNvZ25pdG86dXNlcm5hbWUiOiJyYWppdkBiZXRhbGVjdGljLmNvbSIsImV4cCI6MTU3NzEwMjA0OCwiaWF0IjoxNTc3MDk4NDQ4LCJlbWFpbCI6InJhaml2QGJldGFsZWN0aWMuY29tIn0.eOP99nScpL6alZtd-XXZMA0_RMMvO3X22boOKS9-l_GK4ml5-xN9RRU1x_qGPwyb2XSrSiHpns9ayeJMwXxgKbesB-Icv9cuE2fnTdaqjCcFvWWTYxrzNHf1KeiQsOxbvkCZgoz9nhRyyaT30g1fmiFo7bUCiQ-y7-47VbzLFIfZnOMsZcJFkxHaCfZL4xtdt3c_P94K5SAq3tjJdcVdBRVOPFeZa6fQ4gj5EWW8Egd6WcVkrtYgqrGPoeGhxPzdixWulBI7L0StuX90VrtaGeXq016YatMueVwvADHZvAkbYp2RHGR1fYeQ7rEm481vqE96PInfEnw5ouLzbMmFnA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.r5RgmzuvoRrlCMwp-X-5wVE7aP0xF5tFYL2VRbi3c0xpuS80STuj8inmjxGfXd-4MITRscyn_HaYFwynhm37OeAtYDRHk15duIpIXAKOFZXzY5FN0I0tdkpGfBA-_9o9HZU0NAg4PAkDuXryPySqJVGRmuhQO28gcaX7OyK6Ofa50_trdjkMl_RTlPkHraBPfmTUQanYCNj_r5GX1bU3U68h8IIyh46VqzMdvqM288sQIAGKiYILarrNm-Qb_PnRSjCuVH91lyh5RmH7-hn0RkxU5IbLx3VuU5_x2TJkEAZEUgC8Cg-zk55v60RP_6sWgZOcx2xqgoZEYtkbMxUD7A.LsSIqFFD-TFePpDg.wYHGB4eVkWA2fjB6mcc4TIKVwLQehHttY7ru1lRcBAYrK2mVGooVe1TYEGIb8RzpQZJJSCsriUUlTfP-Z52PSEEkvq_BwEpQcaDYA11jPs4qfeuJT2Qw8qZ1FZtD1Iil_I_7t6OyvGyYFxKO1hd9hNs_MxUAkQWL38Nur2xwBoDyfczY6_Hm_nJpwIpNZhPM0bZm1sNBYc-IC32G_lSqNtY87N5mqOnt4zPXgidiVw4_H1fFS0DRhR-LBfB2PofNCq_knMTR8GUvqUwF1fsMf0yMCb0nnD2vhO3C7DpPjlI6cRC2ipp-g6mLdPS-QbmVv7IO9PMETvmld_3VbnVp7h_0-CWy6E1XDzhYrCJDJWRLpbRql6LmuDWoAgmW1VabvTjyEb33t70rFZv78MLCaN4nZQh_GjmxgIQAD3suA8wvBHPWruFszf7pmP3xxp2ewQwrd9bqSfsNKL9fK95U8j8hwBEtf5hJoxNBDIfLs7fcSthKqFOBqegkOXYgQPIFLXjjfjdluCxr2fkHY6GZx4ZCwMNZsPJ2FUf_6aiG8UE5qjixXL2kJbPS6acjHBHxQc0OLrK3TocEZ2JA-It9_EHH-toM5YL9YApcZPV8crrcWREqi42dVNYvD7py3gjFgosX0byahDnYXDTGA8Fkjb6Vyin6FJ3mso6vprJXgXPt-BU8EYIocLra9NJpeXeeqHeEdHjAPO5LHp1Pl4cW41oWwX2PReB4xcM91P4_fWrc828sYG3o28uqr2sF9TO0yz-RQGLUt6Pf0xqarcwhz8u3yJacelvIVlUXLE2JIKMH7R0w7n0MlDmNwmgGxPcWZeL7yHPA6Hut1Qicu1OWbrFwEb-nL-V-HzjaN8Ic-UIeLZjfoPfq2f1Kta2HoCf6SCs38D5jx37vB5DofsXwZSRy47L67hrzXYIpccyej8CSO9vwGyDOLrvAtDhLc7eDCuP7YjwQDfSoUzJ3kpQgzIJ09o-MgBY1idjLbGlNZwhP6TRyR40-18qhBZau_RojhezJJwjfLy7p3LpVL1FrYl3HzAPkGl7ni005DkPyFcAI1F_NexfORVSRruiig2p65cH8THReswY4cywgC74QT_O6gojbnpw-4_eBn25EVS2nxLNWfj6aV82xcnRwuB8F6aKVchqZQNBZsOwhJ6Lfor0ji5fC6ECeYiUwu0JFSyRxyrEyM2HK7NixD3t-e9sEbeX2Uszs1nVbz-qUwuNlss9h5PYOrRLkI3BposBisdFSyMjMEA-dCohLd3bg7IKd75HKpBxI95PeorBZJS0cud0A2voXmXc.U78cjzAyu6V25HISl8yJhQ\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://857lq5ommb.execute-api.ap-south-1.amazonaws.com/dev/refresh",
+					"protocol": "https",
+					"host": [
+						"857lq5ommb",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forgot Password - Request Code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"rajiv@betalectic.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://857lq5ommb.execute-api.ap-south-1.amazonaws.com/dev/forgot-password",
+					"protocol": "https",
+					"host": [
+						"857lq5ommb",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"forgot-password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset Password - With Code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"rajiv@betalectic.com\",\n\t\"code\":\"782960\",\n\t\"password\": \"Kissmiss9!\",\n\t\"confirm_password\": \"Kissmiss9!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://857lq5ommb.execute-api.ap-south-1.amazonaws.com/dev/reset-password",
+					"protocol": "https",
+					"host": [
+						"857lq5ommb",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"reset-password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJraWQiOiJOQUI5UFl5VFFuK3BUc0JOOUZCOUFQTkUzcm93K0tHbFwvXC8xaFwvRGNGQ2JZPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlMzExNmJjMC0zMjRiLTRhODAtOGZjNS04ZmJmMjZmMzUwY2UiLCJhdWQiOiJ2dTNkYWc3NDBiNG9zbGFuOWh0Mjc3bDJkIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImV2ZW50X2lkIjoiNWE1NTJjMzAtOWRlNi00MzJkLTg5OTMtOTkyNmIwYmVjODc4IiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE1NzcxMTA0OTcsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoLTFfN2FQOXlHVzJPIiwibmFtZSI6IlJhaml2IFNlZWxhbSIsImNvZ25pdG86dXNlcm5hbWUiOiJyYWppdkBiZXRhbGVjdGljLmNvbSIsImV4cCI6MTU3NzExNDA5NywiaWF0IjoxNTc3MTEwNDk3LCJlbWFpbCI6InJhaml2QGJldGFsZWN0aWMuY29tIn0.dPaIW89xhflQ-SKP26jPd7hZ9eGFaFYMfizRwE5uqC3ZjjUv67NQuEBIFPRdF8ktQjfEDLyIKqIQmLdfLyhXYhzNFQRuHdvI9B7aJahaUE9EqIvHdSBs_GuO0YgBIuIjGYgVNJSw_ikDttsWpXwpiDz2Tu6yHOfcGzBAiers7B8L8kYx2EVO3Q2YEB6HHJzNVO96L4EnHY-NVy7OQfJDGszzB68O0oRM9DXjAavZgdjQ3qRgQrwhAq4djarOyMVA1JEctQusgmh8lVAid3Ol-WCt6mfYgJAIsETEiRs8npa23LqHfix2I-DrrMxTL3x-svqdERq_B06glSzyF82DsQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"access_token\": \"eyJraWQiOiJIbUx4UGFpVUFiSHBBcFc4RTBNWjhFais2eW55RFUyQTF0R0tFOEdOb200PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlMzExNmJjMC0zMjRiLTRhODAtOGZjNS04ZmJmMjZmMzUwY2UiLCJldmVudF9pZCI6IjVhNTUyYzMwLTlkZTYtNDMyZC04OTkzLTk5MjZiMGJlYzg3OCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE1NzcxMTA0OTcsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoLTFfN2FQOXlHVzJPIiwiZXhwIjoxNTc3MTE0MDk3LCJpYXQiOjE1NzcxMTA0OTcsImp0aSI6ImI2MDRlMWQwLWU5MDMtNDM1OS1hMTU4LTg5NTcyYzg4YWI3MSIsImNsaWVudF9pZCI6InZ1M2RhZzc0MGI0b3NsYW45aHQyNzdsMmQiLCJ1c2VybmFtZSI6InJhaml2QGJldGFsZWN0aWMuY29tIn0.WJgoCE37s0frJNKjwj03tXnJuTW-eFRi1bNctC6ZP-Ch9hWYAQBIRPTAKh4Lp9kv3la2WASLopwrLE_9XaWj3wj0ygx3442i13Dfni8EWIopcIWrrvvVkJbCSFutAsWXCsFjGeReAUfV2BMHQimS5Mp2aj8UME4EESYzWNrCs6u7wkz9MWxh0RMqJ3XTsDsFT0pPioIQ9GaEYeuF1PM1HwXHqIrVTUdBXNQh8YqOvDMsg6b63LhxwCo45c-wwyY6rWgLe87vveAhFPUXPAX_bXDzKPQUTtHOlPyBchSWVWlSMEzIwb7ytdYVggWMOe1qM9I78F9fZ1Kgv1Rji4PNxQ\",\n\t\"old_password\":\"Kissmiss9!\",\n\t\"password\": \"Kissmiss9!!\",\n\t\"confirm_password\": \"Kissmiss9!!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://857lq5ommb.execute-api.ap-south-1.amazonaws.com/dev/change-password",
+					"protocol": "https",
+					"host": [
+						"857lq5ommb",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"change-password"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

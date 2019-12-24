@@ -1,0 +1,8 @@
+login:
+  handler: lambdas/login.handler
+  events:
+    - http:
+        path: login
+        method: post
+  layers:
+    - { Ref: CommonLibsLambdaLayer }

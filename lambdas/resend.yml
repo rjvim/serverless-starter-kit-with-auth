@@ -1,0 +1,8 @@
+resend:
+  handler: lambdas/resend.handler
+  events:
+    - http:
+        path: resend
+        method: post
+  layers:
+    - { Ref: CommonLibsLambdaLayer }

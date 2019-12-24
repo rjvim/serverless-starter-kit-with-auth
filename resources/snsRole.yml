@@ -1,0 +1,19 @@
+Resources:
+  snsRole:
+    Type: "AWS::IAM::Role"
+    Properties:
+      Description: "Create a policy which will allow to send sms"
+      RoleName: ${self:custom.snsRoleName}
+      ManagedPolicyArns:
+        - Ref: snsPolicy
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Sid: ""
+            Effect: Allow
+            Principal:
+              Service: cognito-idp.amazonaws.com
+            Action: sts:AssumeRole
+            Condition:
+              StringEquals:
+                sts:ExternalId: d93f5509-829f-45fc-8b4b-d8666b7d582f

@@ -1,0 +1,12 @@
+refresh:
+  handler: lambdas/refresh.handler
+  events:
+    - http:
+        path: refresh
+        method: post
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+  layers:
+    - { Ref: CommonLibsLambdaLayer }

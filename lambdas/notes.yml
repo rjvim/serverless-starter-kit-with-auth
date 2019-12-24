@@ -1,0 +1,6 @@
+notes:
+  handler: lambdas/notes.handler
+  events:
+    - http:
+        path: notes
+        method: get

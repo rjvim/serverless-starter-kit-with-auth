@@ -1,0 +1,8 @@
+register:
+  handler: lambdas/register.handler
+  events:
+    - http:
+        path: register
+        method: post
+  layers:
+    - { Ref: CommonLibsLambdaLayer }

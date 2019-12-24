@@ -1,0 +1,13 @@
+Resources:
+  CognitoUserPool:
+    Type: "AWS::Cognito::UserPool"
+    Properties:
+      MfaConfiguration: OFF
+      UserPoolName: ${self:custom.userPoolName}
+      AutoVerifiedAttributes:
+        - email
+        - phone_number
+      SmsConfiguration:
+        SnsCallerArn:
+          "Fn::GetAtt": [snsRole, Arn]
+        ExternalId: d93f5509-829f-45fc-8b4b-d8666b7d582f

@@ -1,0 +1,8 @@
+confirm:
+  handler: lambdas/confirm.handler
+  events:
+    - http:
+        path: confirm
+        method: post
+  layers:
+    - { Ref: CommonLibsLambdaLayer }

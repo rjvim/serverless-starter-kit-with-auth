@@ -1,0 +1,59 @@
+service: ${file(config.${opt:stage}.json):NAME}
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: ${file(config.${opt:stage}.json):REGION}
+  stage: ${file(config.${opt:stage}.json):STAGE}
+  environment:
+    USER_POOL_ID: ${cf.${self:provider.region}:${self:service.name}-${self:provider.stage}.CognitoUserPoolId}
+    USER_POOL_CLIENT_ID: ${cf.${self:provider.region}:${self:service.name}-${self:provider.stage}.CognitoUserPoolClientId}
+
+custom:
+  userPoolName: ${self:service.name}-${self:provider.stage}-userpool
+  userPoolClientName: ${self:service.name}-${self:provider.stage}-userpoolclient
+  snsPolicyName: ${self:service.name}-${self:provider.stage}-snsPolicy
+  snsRoleName: ${self:service.name}-${self:provider.stage}-snsRole
+
+functions:
+  - ${file(lambdas/register.yml)}
+  - ${file(lambdas/confirm.yml)}
+  - ${file(lambdas/resend.yml)}
+  - ${file(lambdas/login.yml)}
+  - ${file(lambdas/me.yml)}
+  - ${file(lambdas/notes.yml)}
+  - ${file(lambdas/forgot-password.yml)}
+  - ${file(lambdas/reset-password.yml)}
+  - ${file(lambdas/change-password.yml)}
+  - ${file(lambdas/refresh.yml)}
+
+layers:
+  commonLibs:
+    path: layer
+    compatibleRuntimes:
+      - nodejs12.x
+
+package:
+  exclude:
+    - node_modules/**
+    - config.dev.json
+
+resources:
+  - ${file(resources/snsPolicy.yml)}
+  - ${file(resources/snsRole.yml)}
+  - ${file(resources/userpool.yml)}
+  - ${file(resources/userpoolclient.yml)}
+  - ${file(resources/authorizer.yml)}
+  - Outputs:
+      snsPolicyArn:
+        Value:
+          Ref: snsPolicy
+      snsRoleArn:
+        Value:
+          "Fn::GetAtt": [snsRole, Arn]
+      CognitoUserPoolId:
+        Value:
+          Ref: CognitoUserPool
+      CognitoUserPoolClientId:
+        Value:
+          Ref: CognitoUserPoolClient
