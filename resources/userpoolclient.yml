@@ -3,8 +3,8 @@ Resources:
     Type: "AWS::Cognito::UserPoolClient"
     Properties:
       ClientName: ${self:custom.userPoolClientName}
+      GenerateSecret: false
       ExplicitAuthFlows:
-        - ALLOW_USER_PASSWORD_AUTH
-        - ALLOW_REFRESH_TOKEN_AUTH
+        - CUSTOM_AUTH_FLOW_ONLY
       UserPoolId:
         Ref: CognitoUserPool
